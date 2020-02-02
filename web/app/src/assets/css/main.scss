@@ -1,0 +1,29 @@
+$font-family-default: "Open Sans", sans-serif;
+$font-color-primary-default: #ccd1e0;
+$font-color-secondary-default: rgba(204, 209, 224, 0.7);
+$font-color-accent-default: #c24d2c;
+$font-color-error-default: #a51414;
+$color-primary-default: #1e202c;
+$color-secondary-default: #282b3a;
+$color-tertiary-default: rgba(204, 209, 224, 0.5);
+$color-accent-default: #c24d2c;
+$color-error-default: #a51414;
+$border-radius-default: 3px;
+$transition-default: 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
+
+.btn {
+  display: inline-block;
+  padding: 7px 12px;
+
+  font-family: $font-family-default;
+  font-size: 14px;
+  color: $font-color-primary-default;
+  user-select: none;
+
+  background-color: $color-accent-default;
+  border-radius: $border-radius-default;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
