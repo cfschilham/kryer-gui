@@ -35,6 +35,10 @@
     </div>
     <div class="hostlist-status">
       <span class="hostlist-title">Status</span>
+      <div class="hostlist-status-label">
+        <label>Current Host</label>
+        <span>{{ 1 }}</span>
+      </div>
     </div>
   </div>
 </template>

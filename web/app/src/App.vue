@@ -15,7 +15,7 @@
     <keep-alive include="Hostlist,Manual">
       <router-view
         :key="$route.params.id"
-        :destroy-i-d="destroyID"
+        :destroyID="destroyID"
         @destroyed="closeTabID"
       />
     </keep-alive>
