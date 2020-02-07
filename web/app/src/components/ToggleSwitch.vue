@@ -41,7 +41,7 @@ export default Vue.extend({
       width: 50px;
       height: 22px;
 
-      background-color: rgba(204, 209, 224, 0.2);
+      background-color: rgba(204, 209, 224, 0.15);
       border-radius: 11px;
 
       transition: $transition-default;

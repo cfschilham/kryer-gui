@@ -41,7 +41,7 @@
       </div>
       <div class="hostlist-status">
         <label><i class="mdi mdi-progress-clock" /> Status</label>
-        <span>{{ 'Dialling' }}</span>
+        <span>{{ 'dialling' }}</span>
       </div>
       <ProgressBar :width="360" :progress="73" />
     </div>
@@ -154,21 +154,23 @@ export default Vue.extend({
         align-items: center;
         justify-content: space-between;
 
-        margin-bottom: 9px;
+        margin-bottom: 10px;
 
         // width: 360px;
         label {
 
         }
         span {
+          height: 28px;
           width: 180px;
-          padding: 6px 6px 7px 6px;
+          padding: 0 6px;
 
           text-align: center;
           font-size: 14px;
           color: $font-color-primary-default;
+          line-height: 26px;
 
-          background-color: rgba($color: #000000, $alpha: 0.2);
+          background-color: rgba(204, 209, 224, 0.15);
           border-radius: $border-radius-default;
         }
       }

@@ -40,10 +40,7 @@ export default Vue.extend({
       return String(this.width - 1) + "px"
     },
     titleWidth(): string {
-      if (this.active) {
-        return String(this.width - 42) + "px"
-      }
-      return String(this.width - 20) + "px"
+      return String(this.width - 42) + "px"
     },
   },
 })
@@ -90,37 +87,6 @@ export default Vue.extend({
 
     &.active {
       background-color: $color-primary-default;
-      .tab-close {
-        position: relative;
-
-        display: block;
-
-        z-index: 0;
-
-        &::before {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-
-          height: 0;
-          width: 0;
-
-          z-index: -1;
-
-          content: "";
-
-          background-color: rgba($color: #000000, $alpha: 0.15);
-          border-radius: 13px;
-
-          transition: $transition-default;
-          transition-property: height, width;
-        }
-        &:hover::before {
-          width: 24px;
-          height: 24px;
-        }
-      }
       &::before {
         width: 100%;
         background-color: $color-accent-default;
@@ -136,10 +102,37 @@ export default Vue.extend({
       white-space: nowrap;
     }
     .tab-close {
-      display: none;
+      position: relative;
 
+      display: block;
+
+      z-index: 0;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        height: 0;
+        width: 0;
+
+        z-index: -1;
+
+        content: "";
+
+        background-color: rgba($color: #000000, $alpha: 0.15);
+        border-radius: 13px;
+
+        transition: $transition-default;
+        transition-property: height, width;
+      }
       &:hover {
         cursor: pointer;
+      }
+      &:hover::before {
+        width: 24px;
+        height: 24px;
       }
       i {
         padding: 7px;
