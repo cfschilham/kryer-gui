@@ -11,34 +11,39 @@
         <ToggleSwitch />
       </div>
       <div class="hostlist-threads-port-timeout">
-        <TextInput :width="100">
+        <TextInput :width="110">
           Threads
         </TextInput>
-        <TextInput :width="100">
+        <TextInput :width="110">
           Port
         </TextInput>
-        <TextInput :width="100">
+        <TextInput :width="110">
           Timeout
         </TextInput>
       </div>
       <div class="hostlist-file">
         <label><i class="mdi mdi-book-open-variant" /> Dictionary</label>
-        <FileInput :width="220" />
+        <FileInput :width="260" />
       </div>
       <div class="hostlist-file">
         <label><i class="mdi mdi-view-list" /> Hostlist</label>
-        <FileInput :width="220" />
+        <FileInput :width="260" />
       </div>
-      <TextInput :width="320">
+      <TextInput :width="360">
         Output File
       </TextInput>
     </div>
-    <div class="hostlist-status">
-      <span class="hostlist-title">Status</span>
-      <div class="hostlist-status-label">
-        <label>Current Host</label>
-        <span>{{ 1 }}</span>
+    <div class="hostlist-information">
+      <span class="hostlist-title">Information</span>
+      <div class="hostlist-status">
+        <label><i class="mdi mdi-account" /> Current Host</label>
+        <span>{{ 'root@somehost.local' }}</span>
       </div>
+      <div class="hostlist-status">
+        <label><i class="mdi mdi-progress-clock" /> Status</label>
+        <span>{{ 'Dialling' }}</span>
+      </div>
+      <ProgressBar :width="360" :progress="73" />
     </div>
   </div>
 </template>
@@ -48,6 +53,7 @@ import Vue from "vue"
 import TextInput from "../components/TextInput.vue"
 import ToggleSwitch from "../components/ToggleSwitch.vue"
 import FileInput from "../components/FileInput.vue"
+import ProgressBar from "../components/ProgressBar.vue"
 
 export default Vue.extend({
   name: "Hostlist",
@@ -55,6 +61,7 @@ export default Vue.extend({
     TextInput,
     ToggleSwitch,
     FileInput,
+    ProgressBar,
   },
   props: {
     destroyID: {
@@ -108,11 +115,12 @@ export default Vue.extend({
     }
 
     .hostlist-configuration {
+      padding: 4px 20px 4px 10px;
       .hostlist-switch {
         display: flex;
         align-items: center;
 
-        width: 320px;
+        width: 360px;
         margin-bottom: 12px;
 
         .toggle-switch {
@@ -123,14 +131,14 @@ export default Vue.extend({
         display: flex;
         justify-content: space-between;
 
-        width: 320px;
+        width: 360px;
         margin-bottom: 4px;
       }
       .hostlist-file {
         display: flex;
         align-items: center;
 
-        width: 320px;
+        width: 360px;
         margin-bottom: 12px;
 
         .file-input {
@@ -139,8 +147,31 @@ export default Vue.extend({
       }
     }
 
-    .hostlist-status {
+    .hostlist-information {
+      padding: 4px 10px 4px 20px;
+      .hostlist-status {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
+        margin-bottom: 9px;
+
+        // width: 360px;
+        label {
+
+        }
+        span {
+          width: 180px;
+          padding: 6px 6px 7px 6px;
+
+          text-align: center;
+          font-size: 14px;
+          color: $font-color-primary-default;
+
+          background-color: rgba($color: #000000, $alpha: 0.2);
+          border-radius: $border-radius-default;
+        }
+      }
     }
   }
 </style>
